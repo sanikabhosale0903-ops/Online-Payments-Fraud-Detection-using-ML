@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url('/static/images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 350px;
+    backdrop-filter: blur(8px);
+
+    animation: fadeIn 1s ease-in-out;
+}
+
+.result {
+    font-size: 30px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* Glow animation */
+.result.fraud {
+    color: red;
+    animation: glowRed 1s infinite alternate;
+}
+
+.result.safe {
+    color: lightgreen;
+    animation: glowGreen 1s infinite alternate;
+}
+
+@keyframes glowRed {
+    from { text-shadow: 0 0 5px red; }
+    to { text-shadow: 0 0 20px red; }
+}
+
+@keyframes glowGreen {
+    from { text-shadow: 0 0 5px lightgreen; }
+    to { text-shadow: 0 0 20px lightgreen; }
+}
+
+button {
+    padding: 10px 20px;
+    background: #00c6ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0072ff;
+}
+
+/* Fade */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="result-box">
+
+<h1>💳 Fraud Detection Result</h1>
+
+<div class="result {% if result=='Fraud' %}fraud{% else %}safe{% endif %}">
+    {{ result }}
+</div>
+
+<a href="/predict">
+    <button>Try Again</button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

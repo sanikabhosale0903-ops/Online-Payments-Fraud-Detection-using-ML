@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        background-color: wheat;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align:center;
+    }
+    .heading {
+      font-size: 48px;
+      color: rgb(0, 219, 248);
+      margin-bottom: 20px;
+    }
+    .content {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            position: absolute;
+            bottom:350px;
+            left: 905px;
+
+        }
+
+        .cta-button:hover {
+            background: rgb(194, 228, 228);
+            color: black;
+        }
+        a {
+            border: 2px solid white;
+
+        }
+</style>
+<body>
+    <div class="container">
+        <h1 class="heading">Online Payment Fraud Detection</h1>
+        <p class="content">The online payment {{pred}}</p>
+    </div>
+    <a href="/predict" class="cta-button">Predict</a>
+
+</body>
+</html>

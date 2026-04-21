@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <title>Fraud Detection</title>
+
+    <link href="../static/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-body">
+                    <h2 class="title">Information</h2>
+
+                    <form action="/pred" method="POST">
+                        <div class="input-group p-t-10">
+                            <label for="step" class="p-b-10 font-weight-bold"
+                                style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Step</label>
+                            <input class="input--style-1" type="text" placeholder="Step" name="step" id="step"
+                                style="margin-top: 10px; padding-left: 10px;">
+                        </div>
+                        <div class="input-group p-t-10">
+                            <label for="type" class="p-b-10 font-weight-bold"
+                                style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Type</label>
+                            <input class="input--style-1" type="text" placeholder="Type" name="type" id="type"
+                                style="margin-top: 10px; padding-left: 10px;">
+                        </div>
+                        <div class="input-group p-t-10">
+                            <label for="amount" class="p-b-10 font-weight-bold"
+                                style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Amount</label>
+                            <input class="input--style-1" type="text" placeholder="Amount" name="amount" id="amount"
+                                style="margin-top: 10px; padding-left: 10px;">
+                        </div>
+                        <div class="input-group p-t-10">
+                            <label for="oldBalanceOrg" class="p-b-10 font-weight-bold"
+                                style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Old Balance
+                                (Origin)</label>
+                            <input class="input--style-1" type="text" placeholder="Old Balance (Origin) "
+                                style="margin-top: 10px; padding-left: 10px;" name="oldBalanceOrg" id="oldBalanceOrg">
+                        </div>
+                        <div class="input-group p-t-10">
+                            <label for="newBalanceOrg" class="p-b-10 font-weight-bold"
+                                style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">New Balance
+                                (Origin)</label>
+                            <input class="input--style-1" type="text" placeholder="New Balance (Origin) "
+                                style="margin-top: 10px; padding-left: 10px;" name="newBalanceOrg" id="newBalanceOrg">
+                        </div>
+                        <div class="input-group p-t-10">
+                            <label for="oldBalanceDest" class="p-b-10 font-weight-bold"
+                                style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Old Balance
+                                (Destination)</label>
+                            <input class="input--style-1" type="text" placeholder="Old Balance (Destination) "
+                                style="margin-top: 10px; padding-left: 10px;" name="oldBalanceDest" id="oldBalanceDest">
+                        </div>
+                        <div class="input-group p-t-10">
+                            <label for="newBalanceDest" class="p-b-10 font-weight-bold"
+                                style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">New Balance
+                                (Destination)</label>
+                            <input class="input--style-1" type="text" placeholder="New Balance (Destination) "
+                                style="margin-top: 10px; padding-left: 10px;" name="newBalanceDest" id="newBalanceDest">
+                        </div>
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                    
+                </div>
+                <h2>{{pred}}</h2>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

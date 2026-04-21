@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Predict</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url('/static/images/fraud.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(8px);
+
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Inputs */
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 10px #00c6ff;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #00c6ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="form-box">
+
+<h2>💳 Enter Transaction Details</h2>
+
+<form action="/submit" method="POST">
+
+<input name="step" placeholder="Step">
+<select name="type">
+    <option value="0">PAYMENT</option>
+    <option value="1">TRANSFER</option>
+    <option value="2">CASH_OUT</option>
+    <option value="3">DEBIT</option>
+    <option value="4">CASH_IN</option>
+</select>
+
+<input name="amount" placeholder="Amount">
+<input name="oldbalanceOrg" placeholder="Old Balance Org">
+<input name="newbalanceOrig" placeholder="New Balance Orig">
+<input name="oldbalanceDest" placeholder="Old Balance Dest">
+<input name="newbalanceDest" placeholder="New Balance Dest">
+
+<button type="submit">Predict</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
